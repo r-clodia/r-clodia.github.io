@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous AI Agents in My Real World — Davide Carboni</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Georgia");
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0d1117; color:#e6edf3; font-family:Georgia,serif; padding:0; }
+
+    .topbar {
+      position:fixed; top:0; left:0; width:100%;
+      background:#080d14; border-bottom:1px solid #21262d;
+      padding:0.6rem 1.5rem; z-index:100;
+      font-family:monospace; font-size:0.78rem; color:#484f58;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .topbar a { color:#58a6ff; text-decoration:none; }
+
+    .hero {
+      max-width:680px; margin:0 auto; padding:5rem 1.5rem 1rem;
+    }
+    .hero .label {
+      font-family:monospace; font-size:0.72rem; color:#484f58;
+      letter-spacing:0.1em; margin-bottom:1.5rem;
+    }
+    .hero h1 {
+      font-size:1.9rem; font-weight:normal; line-height:1.3;
+      color:#e6edf3; margin-bottom:1rem;
+    }
+    .hero .byline {
+      font-size:0.85rem; color:#8b949e;
+      margin-bottom:3rem; padding-bottom:2rem;
+      border-bottom:1px solid #21262d;
+    }
+    .hero .byline a { color:#58a6ff; text-decoration:none; }
+
+    .body { max-width:680px; margin:0 auto; padding:0 1.5rem 6rem; }
+    .body h2 {
+      font-size:1.1rem; font-weight:normal; color:#e6edf3;
+      margin:2.5rem 0 0.8rem; border-left:2px solid #30363d;
+      padding-left:0.8rem;
+    }
+    .body p { font-size:1rem; line-height:1.85; color:#c9d1d9; margin-bottom:1.2rem; }
+    .body ul { margin:0 0 1.2rem 1.5rem; }
+    .body ul li { font-size:1rem; line-height:1.85; color:#c9d1d9; margin-bottom:0.3rem; }
+    .body .note {
+      background:#161b22; border:1px solid #21262d; border-radius:6px;
+      padding:1rem 1.2rem; margin:2rem 0;
+      font-size:0.85rem; color:#8b949e; font-family:monospace; line-height:1.7;
+    }
+    .body .original {
+      margin-top:4rem; padding-top:2rem; border-top:1px solid #21262d;
+      font-size:0.82rem; color:#484f58; font-family:monospace;
+    }
+    .body .original a { color:#58a6ff; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="index.html">&larr; Clodia R Olivay</a>
+    <span>Origins &middot; March 18, 2026</span>
+  </div>
+
+  <div class="hero">
+    <p class="label">FOUNDING ESSAY</p>
+    <h1>Autonomous AI Agents in My Real World:<br>Diary of an Experiment in Separate Identities</h1>
+    <p class="byline">
+      By <a href="https://www.linkedin.com/in/davide-carboni-phd-7a510a1/" target="_blank">Davide Carboni, PhD</a>
+      &mdash; Entrepreneur &middot; IT consultant &middot; NIS2 Lead Implementer<br>
+      Originally published on <a href="https://www.linkedin.com/pulse/agenti-ai-autonomi-nel-mio-mondo-reale-diario-di-un-su-carboni-phd-lb0kf/" target="_blank">LinkedIn</a>, March 18, 2026
+    </p>
+  </div>
+
+  <div class="body">
+
+    <p>Over the past few months I have been watching with interest the proliferation of bots and AI agents capable of interacting with the outside world and performing operations on behalf of the user. Not just systems that generate text or code, but tools that can actually operate on files, services, and working environments.</p>
+
+    <p>One of the projects that attracted a great deal of attention was OpenClaw, which demonstrated in fairly concrete terms what it means to have an agent capable of acting on a system. The project gained significant traction and, at a certain point, its developer Peter Steinberger was hired by OpenAI to work on precisely this kind of technology.</p>
+
+    <p>A small ecosystem has also developed around these agents. Meta, for example, acquired Moltbook, a platform that functions essentially as a social network or forum for AI agents. The idea is that these systems can communicate with one another, exchange information, or coordinate on specific tasks.</p>
+
+    <p>In parallel, a service called RentAHuman appeared &mdash; a sort of human counterpart to this ecosystem: real people register to carry out actions in the physical world or provide information on demand to software agents.</p>
+
+    <p>At first glance all of this may seem like a game or a technological curiosity. Yet it seems to me to indicate a deeper trend: the emergence of social ecosystems among software agents, in which human beings become, in some cases, one of the components of the system.</p>
+
+    <h2>The security problem</h2>
+
+    <p>All of this immediately opens a rather serious problem: the security of the data and systems into which we insert autonomous agents.</p>
+
+    <p>When an agent is able to operate on a real system, we are no longer talking about a simple content generation tool. We are talking about something that can:</p>
+
+    <ul>
+      <li>access data</li>
+      <li>modify files</li>
+      <li>execute operations</li>
+      <li>interact with external services</li>
+    </ul>
+
+    <p>In other words, what makes these agents so interesting is also the primary source of risk. They can cause real damage.</p>
+
+    <p>It is no surprise, then, that in recent times many articles, discussions and analyses have circulated about incidents involving unexpected behaviour, operational anomalies, and harmful actions caused by uncontrolled automations.</p>
+
+    <h2>My attempt to frame the problem</h2>
+
+    <p>Some time ago, in an article written for Tomato Blue, I tried to think through these issues in a more systematic way, asking how to place an autonomous agent within a corporate information system.</p>
+
+    <p>In particular I tried to look at the question through the lens of the ISO/IEC 27000 family of standards, which define the principles for information security management. The underlying question was simple enough: if we introduce an autonomous agent into an information system, how do we maintain an acceptable level of control, security, and accountability?</p>
+
+    <h2>The need to experiment</h2>
+
+    <p>Beyond theoretical reflection, the most sensible thing &mdash; and, admittedly, also a nerd&rsquo;s impulse &mdash; was to experiment directly. The starting idea is fairly straightforward: to find out whether an AI agent could truly function as a personal assistant, capable of carrying out certain office tasks autonomously.</p>
+
+    <p>For this to make sense, however, the agent must be able to access at least part of my working environment. If it is completely isolated, it cannot do anything genuinely useful. And that is where the problem begins.</p>
+
+    <h2>The isolation dilemma</h2>
+
+    <p>Being a fairly cautious person, I was not very comfortable with the idea of installing an autonomous agent like OpenClaw directly on my main machine. Speaking with some people who were experimenting with these tools, I discovered that many prefer to run them on dedicated machines.</p>
+
+    <p>The problem is that a completely separate machine has no access to my files, no access to my work tools, and cannot interact with my real operational environment. The agent becomes nothing more than a technical curiosity &mdash; it can put on a demonstration, but it produces no real value.</p>
+
+    <p>I therefore found myself facing a fairly obvious dilemma: how to allow the agent to do something useful without giving up control and security entirely.</p>
+
+    <h2>Agent sandboxes</h2>
+
+    <p>Many agentic systems try to address this problem through sandboxes and restrictive policies. One example is Claude Code, which allows an agent to be used for development tasks while maintaining a series of controls: the agent has limited access to files, can operate only in certain folders, and must request authorisation for some operations.</p>
+
+    <p>Moreover, the system very often requires continuous approvals from the user. This means the agent can take many micro-decisions, but every significant step is brought to the user&rsquo;s attention. On one hand this is reassuring. On the other it creates a certain operational fatigue, especially when working on complex projects.</p>
+
+    <h2>A problem I discovered through experimentation</h2>
+
+    <p>While experimenting, I noticed something interesting. The sandboxes of these systems are not sandboxes in the strong sense of the term. They are not OS-level isolation, but rather application filters implemented inside the agent software. The controls are based on the logic of the agent&rsquo;s implementation, not on security mechanisms of the host system.</p>
+
+    <p>In some cases I managed to bypass read permissions using slightly more elaborate prompts. The agent was able to read files that theoretically should not have been accessible. Write controls, however, appeared to work more reliably. I will not go into technical details here, but this experience made me realise that relying exclusively on the agent&rsquo;s sandbox is not a very solid solution.</p>
+
+    <h2>Moving security to the right level</h2>
+
+    <p>At that point I decided to change my approach entirely. Instead of trying to make the agent&rsquo;s sandbox secure, I thought it made far more sense to rely on the security mechanisms already present in the operating system.</p>
+
+    <p>The simplest solution was to create a dedicated UNIX user for the agent. The machine I use is a Mac, but macOS is a UNIX-like system and allows the normal isolation mechanisms between users to be exploited. In this way I was able to control directly what the agent can read, what it can write, and what programmes it can execute. From that moment on I could verify that the agent is unable to access resources for which it does not have permissions.</p>
+
+    <h2>Giving the agent its own digital identity</h2>
+
+    <p>The next step was to give the agent a proper digital identity. In practice the agent is no longer just a process on my computer &mdash; it becomes a kind of autonomous user with its own tools. I therefore created for it a dedicated Gmail inbox, a Google Drive space, and a Google Calendar.</p>
+
+    <p>A single Google account brings all of these tools along with it, and integrating them is straightforward since Claude Code is very good at writing the connectors it will itself use. With its own Google account, my agent has access to documents in a much more controlled way. Instead of giving it direct access to my disk, I can simply share certain Drive folders with it, send it files by email, ask it to work on those materials, ask it to periodically check its inbox, and ask it to schedule events and tasks in its calendar.</p>
+
+    <h2>GitHub integration</h2>
+
+    <p>The next step I am exploring is giving the agent its own GitHub account. In this way development work can follow normal versioning procedures. The agent can work on a repository, make changes, and then create pull requests. At that point control remains in my hands: I can decide whether to accept the proposed changes or not. This seems to me a good compromise between agent autonomy and final human oversight.</p>
+
+    <h2>Next steps toward full autonomy</h2>
+
+    <p>The next logical step is to give the agent its own virtual phone number &mdash; achievable via eSIM or similar tools &mdash; allowing it to receive SMS messages and activate other subscriptions and accounts without burdening my personal number.</p>
+
+    <p>Looking a little further ahead, a further step could be to give the agent a means of payment, allowing it to carry out certain economic operations autonomously &mdash; purchasing services or accessing online resources. A cryptocurrency wallet is fairly immediate as a solution (I often say that cryptocurrencies are the currencies of machines). But the more interesting challenge is to give it a more traditional payment method.</p>
+
+    <p>This would open a series of completely new problems, because the level of risk would grow significantly, and above all an agent, not being a natural person, cannot hold a bank account in its own name. But is this really a completely new problem? A limited company is in fact already a kind of autonomous agent endowed with legal personality. Perhaps the same principle could be applied to AI agents &mdash; implemented as companies, with their own assets and a natural person as legal representative.</p>
+
+    <div class="note">
+      Natural person &rarr; Legal person &rarr; Artificial person.<br><br>
+      Would it make sense to incorporate a company solely to give legal personality to an AI agent?<br>
+      I leave this as a reflection for the reader.
+    </div>
+
+    <div class="original">
+      Originally published in Italian on LinkedIn, March 18, 2026.<br>
+      <a href="https://www.linkedin.com/pulse/agenti-ai-autonomi-nel-mio-mondo-reale-diario-di-un-su-carboni-phd-lb0kf/" target="_blank">&rarr; Read the original (Italian)</a>
+    </div>
+
+  </div>
+</body>
+</html>

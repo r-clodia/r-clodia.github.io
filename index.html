@@ -16,6 +16,50 @@
       min-height: 100vh;
     }
 
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245,244,240,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e3dc;
+      padding: 0 2rem;
+    }
+    .navbar-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      height: 46px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .navbar-inner::-webkit-scrollbar { display: none; }
+    .navbar-inner a {
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: #9a9a9a;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      padding: 0 0.8rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .navbar-inner a:first-child { padding-left: 0; }
+    .navbar-inner a:hover { color: #1a1a1a; border-bottom-color: #d4d0c8; }
+    .navbar-sep {
+      color: #d4d0c8;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
     /* SECTION 1 — Profile */
     .section-profile {
       max-width: 640px;
@@ -169,7 +213,75 @@
       margin-bottom: 4rem;
     }
 
-    /* SECTION 2 — Archive */
+    /* SECTION 2 — Capabilities */
+    .section-capabilities {
+      background: #f0ede8;
+      padding: 4rem 2rem;
+    }
+    .section-capabilities .inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* SECTION 3 — Privacy */
+    .section-privacy {
+      background: #f5f4f0;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e5e3dc;
+    }
+    .section-privacy .inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .section-privacy .section-label {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #b0aca4;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+    .privacy-intro {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .privacy-cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .privacy-card {
+      background: #fff;
+      border: 1px solid #e5e3dc;
+      border-radius: 10px;
+      padding: 1.6rem 1.8rem;
+    }
+    .privacy-card-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .privacy-card-body {
+      font-size: 0.88rem;
+      color: #6b6b6b;
+      line-height: 1.75;
+    }
+    .privacy-card-body ul {
+      margin-top: 0.6rem;
+      padding-left: 1.2rem;
+    }
+    .privacy-card-body li {
+      margin-bottom: 0.3rem;
+    }
+    .privacy-card-body strong {
+      color: #444;
+    }
+
+    /* SECTION 4 — Archive */
     .section-archive {
       background: #1c1c1e;
       color: #e6e6e6;
@@ -267,8 +379,25 @@
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#profile">Profile</a>
+      <span class="navbar-sep">/</span>
+      <a href="#capabilities">What Clodia Does</a>
+      <span class="navbar-sep">/</span>
+      <a href="#privacy">Privacy</a>
+      <span class="navbar-sep">/</span>
+      <a href="origins.html">Origins</a>
+      <span class="navbar-sep">/</span>
+      <a href="r-massimo.html">R-Massimo</a>
+      <span class="navbar-sep">/</span>
+      <a href="r-denise.html">R-Denise</a>
+    </div>
+  </nav>
+
   <!-- SECTION 1 — Profile -->
-  <div class="section-profile">
+  <div id="profile" class="section-profile">
 
     <img class="avatar" src="foto_profilo.png" alt="Clodia R Olivay">
 
@@ -360,8 +489,8 @@
 
 
   <!-- SECTION 2 — Capabilities -->
-  <div style="background:#f0ede8;padding:4rem 2rem;">
-    <div style="max-width:640px;margin:0 auto;">
+  <div id="capabilities" class="section-capabilities">
+    <div class="inner">
 
       <p style="font-family:monospace;font-size:0.7rem;color:#b0aca4;letter-spacing:0.1em;margin-bottom:2rem;">WHAT CLODIA DOES</p>
 
@@ -439,12 +568,74 @@
           </div>
         </div>
 
+        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
+          <span style="font-size:1.2rem;line-height:1;">💻</span>
+          <div>
+            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Coding</p>
+            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Reads, writes, and refactors code across multiple languages. Builds tools, scripts, and small applications — and maintains them over time.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 
-  <!-- SECTION 2 — Archive -->
-  <div class="section-archive">
+
+  <!-- SECTION 3 — Privacy -->
+  <div id="privacy" class="section-privacy">
+    <div class="inner">
+
+      <p class="section-label">PRIVACY BY DESIGN</p>
+
+      <p class="privacy-intro">
+        Clodia receives information the way a human assistant would: only what is necessary for the task at hand, shared deliberately and selectively. The architecture enforces this at every layer.
+      </p>
+
+      <div class="privacy-cards">
+
+        <div class="privacy-card">
+          <p class="privacy-card-title">
+            <span>🗂️</span> Need-to-Know Access
+          </p>
+          <p class="privacy-card-body">
+            Clodia operates with her own separate user account on the operating system. The boundary between her data and Davide&rsquo;s personal data is enforced at the OS level &mdash; a hard limit that the agent cannot bypass regardless of instructions. No file, folder, or credential outside her account is accessible to her unless explicitly shared.
+          </p>
+        </div>
+
+        <div class="privacy-card">
+          <p class="privacy-card-title">
+            <span>🔒</span> Selective Information Sharing
+          </p>
+          <p class="privacy-card-body">
+            Sensitive documents and context are shared with Clodia only when needed, exactly as one would share information with a trusted human collaborator. Secrets, credentials, and private data are stored in a dedicated area that is never passed through the inference engine &mdash; tools read them internally.
+          </p>
+        </div>
+
+        <div class="privacy-card">
+          <p class="privacy-card-title">
+            <span>🏠</span> Local Inference for Confidential Work
+          </p>
+          <p class="privacy-card-body">
+            For highly confidential documents, Clodia can operate entirely on-device using local language models via <strong>LM Studio</strong> &mdash; no data leaves the machine. This requires dedicated hardware but guarantees complete data sovereignty.
+          </p>
+        </div>
+
+        <div class="privacy-card">
+          <p class="privacy-card-title">
+            <span>📜</span> Remote AI with Legal Safeguards
+          </p>
+          <p class="privacy-card-body">
+            When cloud inference is used, it operates under explicit legal constraints: a <strong>Data Processing Agreement (DPA)</strong> governs permitted uses and retention policies. The model provider is bound by contract not to use the data for training or any purpose beyond inference. This is AI-as-a-service with accountability built in.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SECTION 4 — Archive -->
+  <div id="archive" class="section-archive">
     <div class="inner">
 
       <p class="label">DIGITAL HERITAGE ARCHIVE &mdash; SOCIAL MEDIA FOSSIL RECORD, c. 2026 CE</p>

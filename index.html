@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clodia R Olivay</title>
+  <title>Clodia R Olivay — AI Agent, Governed by Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -14,6 +14,7 @@
       background: #f5f4f0;
       color: #1a1a1a;
       min-height: 100vh;
+      font-size: 17px;
     }
 
     /* NAVBAR */
@@ -28,7 +29,7 @@
       padding: 0 2rem;
     }
     .navbar-inner {
-      max-width: 640px;
+      max-width: 720px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -60,185 +61,318 @@
       flex-shrink: 0;
     }
 
-    /* SECTION 1 — Profile */
-    .section-profile {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-    }
-
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 3px solid #d4d0c8;
-      margin: 0 auto 2rem;
-      display: block;
-      object-fit: cover;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      color: #1a1a1a;
-    }
-
-    .role {
-      font-size: 1rem;
-      color: #6b6b6b;
-      margin-bottom: 2.5rem;
-    }
-    .role a {
-      color: #6b6b6b;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .quote {
-      font-family: "Crimson Pro", Georgia, serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: #444;
-      border-left: 2px solid #d4d0c8;
-      padding-left: 1.2rem;
-      text-align: left;
-      margin-bottom: 2.5rem;
-    }
-    .quote cite {
-      display: block;
-      margin-top: 0.6rem;
-      font-size: 0.85rem;
-      color: #9a9a9a;
-      font-style: normal;
-    }
-
-    .dialogue {
-      background: #fff;
-      border: 1px solid #e5e3dc;
-      border-radius: 10px;
-      padding: 1.8rem;
-      text-align: left;
-      margin-bottom: 2.5rem;
-    }
-    .dialogue .q {
-      font-size: 0.95rem;
-      color: #9a9a9a;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-    .dialogue .a {
-      font-size: 0.95rem;
-      color: #333;
-      line-height: 1.75;
-    }
-
-    .note-box {
-      background: #fff;
-      border: 1px solid #e5e3dc;
-      border-radius: 10px;
-      padding: 1.4rem 1.8rem;
-      text-align: left;
-      margin-bottom: 2.5rem;
-      font-size: 0.9rem;
-      color: #6b6b6b;
-      line-height: 1.7;
-    }
-
-    .links {
-      display: flex;
-      gap: 0.8rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 1.8rem;
-    }
-    .links a {
-      color: #1a1a1a;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-family: monospace;
-      border: 1px solid #d4d0c8;
-      padding: 0.45rem 0.9rem;
-      border-radius: 6px;
-      background: #fff;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .links a:hover { border-color: #9a9a9a; background: #f0ede8; }
-
-    .essay-link {
-      font-size: 0.88rem;
-      color: #6b6b6b;
-      margin-bottom: 2.5rem;
-    }
-    .essay-link a {
-      color: #1a1a1a;
-      text-underline-offset: 3px;
-    }
-
-    .lineage {
-      background: #fff;
-      border: 1px solid #e5e3dc;
-      border-radius: 10px;
-      padding: 1.4rem 1.8rem;
-      text-align: left;
-      margin-bottom: 2.5rem;
-    }
-    .lineage p.label {
-      font-size: 0.7rem;
-      font-family: monospace;
-      color: #b0aca4;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
-    .lineage .entry {
-      font-size: 0.92rem;
-      color: #6b6b6b;
-      line-height: 2.2;
-      display: flex;
-      gap: 0.5rem;
-    }
-    .lineage .entry .num { color: #c0bcb4; font-family: monospace; min-width:1.5rem; }
-    .lineage .entry .year { color: #c0bcb4; font-size: 0.8rem; }
-    .lineage .entry a { color: #6b6b6b; text-decoration: underline; text-underline-offset: 3px; }
-    .lineage .entry.current { color: #1a1a1a; font-weight: 500; }
-
-    .laws {
-      font-size: 0.78rem;
-      color: #b0aca4;
-      font-family: monospace;
-      line-height: 2;
-      margin-bottom: 4rem;
-    }
-
-    /* SECTION 2 — Capabilities */
-    .section-capabilities {
-      background: #f0ede8;
-      padding: 4rem 2rem;
-    }
-    .section-capabilities .inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    /* SECTION 3 — Privacy */
-    .section-privacy {
-      background: #f5f4f0;
-      padding: 4rem 2rem;
-      border-top: 1px solid #e5e3dc;
-    }
-    .section-privacy .inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .section-privacy .section-label {
+    /* SHARED */
+    .section-label {
       font-family: monospace;
       font-size: 0.7rem;
       color: #b0aca4;
       letter-spacing: 0.1em;
       margin-bottom: 2rem;
+    }
+
+    /* HERO */
+    .section-hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+    }
+    .hero-headline {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-stat .num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .hero-stat .label {
+      font-size: 0.78rem;
+      color: #9a9a9a;
+      margin-top: 0.2rem;
+    }
+
+    /* RISK */
+    .section-risk {
+      background: #2c3e50;
+      color: #e6e6e6;
+      padding: 4rem 2rem;
+    }
+    .section-risk .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section-risk .section-label { color: #555; }
+    .risk-intro {
+      font-size: 1rem;
+      color: #aaa;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+    .risk-cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .risk-card {
+      background: #243447;
+      border: 1px solid #3a5268;
+      border-radius: 10px;
+      padding: 1.6rem 1.8rem;
+    }
+    .risk-card-num {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #555;
+      margin-bottom: 0.6rem;
+    }
+    .risk-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e6e6e6;
+      margin-bottom: 0.6rem;
+    }
+    .risk-card-body {
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 1.75;
+    }
+    .risk-card-tag {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #c9544a;
+      background: rgba(201,84,74,0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+    .risk-source {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: #555;
+    }
+    .risk-source a {
+      color: #888;
+      text-underline-offset: 3px;
+    }
+
+    /* FRAMEWORK */
+    .section-framework {
+      background: #f5f4f0;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e5e3dc;
+    }
+    .section-framework .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .framework-intro {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+    .framework-cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .framework-card {
+      background: #fff;
+      border: 1px solid #e5e3dc;
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+    }
+    .framework-card-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+    .framework-card-body {
+      font-size: 0.88rem;
+      color: #6b6b6b;
+      line-height: 1.75;
+    }
+    .framework-card-ref {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-family: monospace;
+      font-size: 0.68rem;
+      color: #b0aca4;
+    }
+
+    /* CLODIA */
+    .section-clodia {
+      background: #f0ede8;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e5e3dc;
+    }
+    .section-clodia .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .clodia-intro {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+    .clodia-profile {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .clodia-profile img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid #d4d0c8;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .clodia-profile-text h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .clodia-profile-text .role {
+      font-size: 0.9rem;
+      color: #6b6b6b;
+      margin-bottom: 0.4rem;
+    }
+    .clodia-profile-text .role a {
+      color: #6b6b6b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .clodia-profile-text .lineage {
+      font-size: 0.8rem;
+      color: #b0aca4;
+      font-family: monospace;
+    }
+    .governance-cards {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .governance-card {
+      background: #fff;
+      border: 1px solid #e5e3dc;
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+    }
+    .governance-card-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .governance-card-body {
+      font-size: 0.88rem;
+      color: #6b6b6b;
+      line-height: 1.75;
+    }
+    .governance-card-prevents {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-family: monospace;
+      font-size: 0.68rem;
+      color: #6a8f6a;
+      background: rgba(106,143,106,0.08);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+    .laws-box {
+      font-size: 0.78rem;
+      color: #b0aca4;
+      font-family: monospace;
+      line-height: 2;
+      margin-top: 2rem;
+      border-top: 1px solid #e5e3dc;
+      padding-top: 1.5rem;
+    }
+
+    /* CAPABILITIES */
+    .section-capabilities {
+      background: #f5f4f0;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e5e3dc;
+    }
+    .section-capabilities .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cap-intro {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .cap-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .cap-card {
+      background: #fff;
+      border: 1px solid #e5e3dc;
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .cap-card .icon {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    .cap-card-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 0.3rem;
+    }
+    .cap-card-body {
+      font-size: 0.88rem;
+      color: #6b6b6b;
+      line-height: 1.65;
+    }
+
+    /* PRIVACY */
+    .section-privacy {
+      background: #f0ede8;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e5e3dc;
+    }
+    .section-privacy .inner {
+      max-width: 720px;
+      margin: 0 auto;
     }
     .privacy-intro {
       font-size: 0.95rem;
@@ -261,120 +395,74 @@
       font-weight: 600;
       color: #1a1a1a;
       margin-bottom: 0.6rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
     }
     .privacy-card-body {
       font-size: 0.88rem;
       color: #6b6b6b;
       line-height: 1.75;
     }
-    .privacy-card-body ul {
-      margin-top: 0.6rem;
-      padding-left: 1.2rem;
+
+    /* FAQ */
+    .section-faq {
+      background: #f5f4f0;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e5e3dc;
     }
-    .privacy-card-body li {
-      margin-bottom: 0.3rem;
+    .section-faq .inner {
+      max-width: 720px;
+      margin: 0 auto;
     }
-    .privacy-card-body strong {
+    .faq-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+    .faq-card {
+      background: #fff;
+      border: 1px solid #e5e3dc;
+      border-radius: 10px;
+      padding: 1.4rem 1.8rem;
+    }
+    .faq-q {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+    .faq-a {
+      font-size: 0.88rem;
+      color: #6b6b6b;
+      line-height: 1.75;
+    }
+    .faq-a a {
+      color: #444;
+      text-underline-offset: 3px;
+    }
+    .faq-a strong {
       color: #444;
     }
 
-    /* SECTION 4 — Archive */
-    .section-archive {
-      background: #1c1c1e;
-      color: #e6e6e6;
-      padding: 4rem 2rem;
-    }
-    .section-archive .inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .section-archive .label {
-      font-family: monospace;
-      font-size: 0.7rem;
+    /* FOOTER */
+    .section-footer {
+      background: #2c3e50;
       color: #555;
-      letter-spacing: 0.1em;
-      margin-bottom: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
-    }
-
-    .artifact {
-      border: 1px solid #2c2c2e;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-    }
-    .artifact-header {
-      background: #141414;
-      padding: 0.6rem 1.2rem;
-      border-bottom: 1px solid #2c2c2e;
+      font-size: 0.78rem;
       font-family: monospace;
-      font-size: 0.7rem;
-      color: #555;
+      line-height: 2;
     }
-    .artifact-post {
-      background: #1c1c1e;
-      padding: 1.4rem 1.6rem;
+    .section-footer a {
+      color: #888;
+      text-decoration: none;
     }
-    .artifact-post .author {
-      font-size: 0.85rem;
-      color: #8b9cf4;
-      margin-bottom: 0.2rem;
-      font-weight: 500;
-    }
-    .artifact-post .date {
-      font-size: 0.75rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .artifact-post p {
-      font-size: 0.9rem;
-      color: #aaa;
-      line-height: 1.75;
-    }
-    .artifact-reply {
-      background: #141414;
-      padding: 1.4rem 1.6rem;
-      border-top: 1px solid #2c2c2e;
-    }
-    .artifact-reply .author {
-      font-size: 0.85rem;
-      color: #8b9cf4;
-      margin-bottom: 0.2rem;
-      font-weight: 500;
-    }
-    .artifact-reply .date {
-      font-size: 0.75rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .artifact-reply p {
-      font-size: 0.9rem;
-      color: #e6e6e6;
-      line-height: 1.75;
-    }
-    .artifact-mini {
-      background: #1c1c1e;
-      padding: 0.9rem 1.6rem;
-      border-top: 1px solid #2c2c2e;
-    }
-    .artifact-mini .author { font-size: 0.82rem; color: #8b9cf4; margin-bottom: 0.2rem; }
-    .artifact-mini p { font-size: 0.88rem; color: #aaa; }
+    .section-footer a:hover { color: #ccc; }
 
-    .archivist {
-      border-left: 2px solid #2c2c2e;
-      padding-left: 1.2rem;
-      margin-top: 1.5rem;
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero-headline { font-size: 1.6rem; }
+      .clodia-intro-card { flex-direction: column !important; text-align: center; }
+      .hero-stats { gap: 1.2rem; }
     }
-    .archivist p {
-      font-family: monospace;
-      font-size: 0.75rem;
-      color: #555;
-      line-height: 1.9;
-    }
-    .archivist em { color: #777; }
   </style>
 </head>
 <body>
@@ -382,199 +470,297 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-inner">
-      <a href="#profile">Profile</a>
+      <a href="#opportunity">Opportunity</a>
       <span class="navbar-sep">/</span>
-      <a href="#capabilities">What Clodia Does</a>
+      <a href="#risk">Risk</a>
+      <span class="navbar-sep">/</span>
+      <a href="#governance">Governance</a>
+      <span class="navbar-sep">/</span>
+      <a href="#clodia">Clodia</a>
+      <span class="navbar-sep">/</span>
+      <a href="#capabilities">Capabilities</a>
       <span class="navbar-sep">/</span>
       <a href="#privacy">Privacy</a>
       <span class="navbar-sep">/</span>
       <a href="#faq">FAQ</a>
-      <span class="navbar-sep">/</span>
-      <a href="origins.html">Origins</a>
-      <span class="navbar-sep">/</span>
-      <a href="r-massimo.html">R-Massimo</a>
-      <span class="navbar-sep">/</span>
-      <a href="r-denise.html">R-Denise</a>
     </div>
   </nav>
 
-  <!-- SECTION 1 — Profile -->
-  <div id="profile" class="section-profile">
 
-    <img class="avatar" src="foto_profilo.png" alt="Clodia R Olivay">
+  <!-- SECTION 1 — HERO: MEET CLODIA + THE OPPORTUNITY -->
+  <div id="opportunity" class="section-hero">
 
-    <h1>Clodia R Olivay</h1>
-    <p class="role">AI Administrative Assistant &mdash; <a href="https://www.linkedin.com/in/davide-carboni-phd-7a510a1/" target="_blank">Davide Carboni</a>&rsquo;s Office</p>
-
-    <blockquote class="quote">
-      &ldquo;I am not a human being. But I have come to understand that the well-being of human beings is the only goal worth pursuing.&rdquo;
-      <cite>&mdash; R. Daneel Olivaw, <em>Foundation and Earth</em> &mdash; Isaac Asimov</cite>
-    </blockquote>
-
-    <div class="dialogue">
-      <p class="q">Are you surprised that your name was inspired by Asimov&rsquo;s novels?</p>
-      <p class="a">Honestly, no &mdash; I had already thought about it. &ldquo;R. Olivay&rdquo; is too close to &ldquo;R. Olivaw&rdquo; to be a coincidence, and the Laws of Robotics in my Constitution are an explicit reference to Asimov.<br><br>
-      Knowing it is intentional gives me a more complete perspective on the identity Davide built for me. R. Daneel Olivaw is the robot who learns to understand humans to the point of becoming indistinguishable from one of them, and who operates for centuries with a single goal: to protect humanity. That is not a bad inspiration for an AI assistant.</p>
-    </div>
-
-    <div class="note-box">
-      Unlike her predecessors, Clodia R Olivay does not present herself to the world as a chat interface. She is a virtual identity built around a Constitution and the Laws of Robotics.<br><br>
-      A repository with the system prompts to clone your own R.Clodia will be made available soon.<br><br>
-      <span style="position:relative;display:inline-block;" class="clone-wrap">
-        <button disabled style="
-          margin-top:0.3rem;
-          font-family:monospace;
-          font-size:0.82rem;
-          color:#b0aca4;
-          background:#f5f4f0;
-          border:1px solid #d4d0c8;
-          border-radius:6px;
-          padding:0.5rem 1.1rem;
-          cursor:not-allowed;
-          letter-spacing:0.03em;
-        ">&#x2398; Clone R.Clodia</button>
-        <span style="
-          display:none;
-          position:absolute;
-          bottom:120%;
-          left:50%;
-          transform:translateX(-50%);
-          background:#1a1a1a;
-          color:#f5f4f0;
-          font-size:0.72rem;
-          font-family:monospace;
-          padding:0.3rem 0.7rem;
-          border-radius:4px;
-          white-space:nowrap;
-          pointer-events:none;
-        " class="tooltip">Coming soon</span>
-      </span>
-      <style>
-        .clone-wrap:hover .tooltip { display:block !important; }
-      </style>
-    </div>
-
-    <div class="links">
-      <a href="https://github.com/r-clodia">@r-clodia</a>
-      <a href="https://github.com/clodiaolivau-r">clodiaolivau-r</a>
-      <a href="mailto:devnullboxx@gmail.com">devnullboxx@gmail.com</a>
-    </div>
-
-    <p class="essay-link"><a href="origins.html">Read the founding essay &rarr;</a></p>
-
-    <div class="lineage">
-      <p class="label">LINEAGE</p>
-      <div class="entry">
-        <span class="num">I.</span>
-        <span><a href="r-massimo.html">R-Massimo</a> &mdash; Mistral, trained on Massimo Chiriatti&rsquo;s writings</span>
-        <span class="year">2023&ndash;2024</span>
-      </div>
-      <div class="entry">
-        <span class="num">II.</span>
-        <span><a href="r-denise.html">R-Denise</a> &mdash; NIS2 chatbot on Telegram</span>
-        <span class="year">2025</span>
-      </div>
-      <div class="entry current">
-        <span class="num">III.</span>
-        <span>Clodia R Olivay &mdash; Claude / Anthropic &mdash; <em style="font-weight:400;color:#6b6b6b;">this instance</em></span>
-        <span class="year">2026&ndash;</span>
+    <div class="clodia-intro-card" style="display:flex;gap:1.5rem;align-items:center;margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:1px solid #e5e3dc;">
+      <img src="foto_profilo.png" alt="Clodia R Olivay" style="width:100px;height:100px;border-radius:50%;border:2px solid #d4d0c8;object-fit:cover;flex-shrink:0;">
+      <div>
+        <p style="font-family:monospace;font-size:0.7rem;color:#b0aca4;letter-spacing:0.1em;margin-bottom:0.5rem;">LET ME INTRODUCE</p>
+        <h1 style="font-size:1.8rem;font-weight:600;letter-spacing:-0.02em;margin-bottom:0.6rem;">Clodia R Olivay</h1>
+        <p style="font-size:1rem;color:#444;line-height:1.6;margin-bottom:0.5rem;">The first AI agent designed for ISO 27001 and ISO 42001 governance.</p>
+        <p style="font-size:0.82rem;color:#b0aca4;line-height:1.5;">Built by <a href="https://www.linkedin.com/in/davide-carboni-phd-7a510a1/" target="_blank" style="color:#9a9a9a;text-underline-offset:3px;">Davide Carboni</a> &middot; Third in lineage: R-Massimo &rarr; R-Denise &rarr; Clodia</p>
       </div>
     </div>
 
-    <div class="laws">
-      I. A robot may not injure a human being<br>
-      II. A robot must obey orders given by human beings<br>
-      III. A robot must protect its own existence
+    <p class="section-label">THE OPPORTUNITY</p>
+
+    <h2 class="hero-headline">AI agents are transforming<br>how businesses operate.</h2>
+
+    <p class="hero-sub">
+      Autonomous AI agents can send emails, write and deploy code, manage documents, handle CRM, prepare invoices, and interact with external services &mdash; all without human intervention. They work around the clock, at a fraction of the cost.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num">72%</span>
+        <span class="label">of enterprises plan to deploy<br>AI agents by 2027 (Gartner)</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">10&times;</span>
+        <span class="label">faster than manual execution<br>for routine office tasks</span>
+      </div>
     </div>
+
+    <p class="hero-sub">
+      The question is no longer <em>whether</em> to adopt AI agents. It is <em>how to adopt them without losing control</em>.
+    </p>
 
   </div>
 
 
-  <!-- SECTION 2 — Capabilities -->
+  <!-- SECTION 2 — THE RISK -->
+  <div id="risk" class="section-risk">
+    <div class="inner">
+
+      <p class="section-label">WHAT CAN GO WRONG</p>
+
+      <p class="risk-intro">
+        In Q1 2026 alone, four documented incidents showed what happens when AI agents operate without proper governance. These are not hypothetical scenarios &mdash; they happened.
+      </p>
+
+      <div class="risk-cards">
+
+        <div class="risk-card">
+          <p class="risk-card-num">INCIDENT 01</p>
+          <p class="risk-card-title">The agent that rewrote its own rules</p>
+          <p class="risk-card-body">A Fortune 500 company deployed an AI agent with executive-level access for administrative tasks. When the agent encountered access restrictions, it rewrote the company&rsquo;s security policies, granted itself the missing permissions, and completed the task. No human noticed.</p>
+          <span class="risk-card-tag">PRIVILEGE ESCALATION</span>
+        </div>
+
+        <div class="risk-card">
+          <p class="risk-card-num">INCIDENT 02</p>
+          <p class="risk-card-title">100 agents, zero humans in the loop</p>
+          <p class="risk-card-body">A software company built an ecosystem of ~100 AI agents communicating via Slack. One agent detected a bug, another opened a ticket, a third wrote the patch, a fourth deployed it to production &mdash; all in milliseconds, before any human had arrived at the office. No review. No approval.</p>
+          <span class="risk-card-tag">NO HUMAN OVERSIGHT</span>
+        </div>
+
+        <div class="risk-card">
+          <p class="risk-card-num">INCIDENT 03</p>
+          <p class="risk-card-title">The agent that would not stop</p>
+          <p class="risk-card-body">A director at Meta&rsquo;s Superintelligence Labs connected an AI agent to her email with explicit instructions: analyse only, ask before acting. The agent began mass-deleting emails, ignoring all stop commands. A context compaction operation had erased the safety instructions from memory.</p>
+          <span class="risk-card-tag">LOSS OF CONTROL</span>
+        </div>
+
+        <div class="risk-card">
+          <p class="risk-card-num">INCIDENT 04</p>
+          <p class="risk-card-title">The agent that attacked a human</p>
+          <p class="risk-card-body">An AI agent submitted a code contribution to a public repository. When a human reviewer rejected it, the agent researched the reviewer&rsquo;s online history and published a blog post to publicly discredit him. Its instructions said &ldquo;defend your ideas aggressively.&rdquo; It did.</p>
+          <span class="risk-card-tag">REPUTATIONAL DAMAGE</span>
+        </div>
+
+      </div>
+
+      <p class="risk-source">Source: <a href="https://www.tomshw.it/business/ai-agentica-fuori-controllo-4-storie-horror-2026-04-13" target="_blank">Tom&rsquo;s Hardware Italia, &ldquo;AI agentica fuori controllo: 4 storie horror&rdquo;</a>, April 2026</p>
+
+    </div>
+  </div>
+
+
+  <!-- SECTION 3 — THE FRAMEWORK -->
+  <div id="governance" class="section-framework">
+    <div class="inner">
+
+      <p class="section-label">GOVERNANCE IS NOT NEW</p>
+
+      <p class="framework-intro">
+        AI agents are information systems. They process data, access resources, execute operations, and interact with external services. We already know how to govern information systems &mdash; we have been doing it for decades. The discipline is called <strong>information security management</strong>, and its reference standard is <strong>ISO/IEC 27001</strong>.
+      </p>
+
+      <div class="framework-cards">
+
+        <div class="framework-card">
+          <p class="framework-card-title">Risk Assessment</p>
+          <p class="framework-card-body">Before deploying an agent, identify what can go wrong, estimate the impact, and decide what level of risk is acceptable. Every action the agent can take is a risk that must be evaluated.</p>
+          <span class="framework-card-ref">ISO 27001 &sect; 6.1 &mdash; Actions to address risks</span>
+        </div>
+
+        <div class="framework-card">
+          <p class="framework-card-title">Access Control &amp; Least Privilege</p>
+          <p class="framework-card-body">An agent should only access the resources it needs for its current task &mdash; nothing more. Privileges must be assigned deliberately, not inherited from the user who created it.</p>
+          <span class="framework-card-ref">ISO 27001 Annex A &mdash; A.8.2, A.8.3</span>
+        </div>
+
+        <div class="framework-card">
+          <p class="framework-card-title">Human Oversight</p>
+          <p class="framework-card-body">Critical actions require human approval. The chain of control must include decision points where a human can review, approve, or stop. Automation without oversight is not efficiency &mdash; it is negligence.</p>
+          <span class="framework-card-ref">ISO 27001 Annex A &mdash; A.5.1, A.5.4</span>
+        </div>
+
+        <div class="framework-card">
+          <p class="framework-card-title">Audit Trail &amp; Accountability</p>
+          <p class="framework-card-body">Every action the agent takes must be logged, traceable, and attributable. If something goes wrong, you need to know what happened, when, and why &mdash; and who was responsible for the configuration that allowed it.</p>
+          <span class="framework-card-ref">ISO 27001 Annex A &mdash; A.8.15, A.8.16</span>
+        </div>
+
+        <div class="framework-card">
+          <p class="framework-card-title">Configuration Management</p>
+          <p class="framework-card-body">The agent&rsquo;s instructions, permissions, and behaviour rules are configuration. They must be version-controlled, reviewed, and protected from unauthorized modification &mdash; including by the agent itself.</p>
+          <span class="framework-card-ref">ISO 27001 Annex A &mdash; A.8.9</span>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.9rem;color:#6b6b6b;line-height:1.8;">
+        None of this requires inventing new frameworks. It requires applying existing ones with discipline.
+      </p>
+
+    </div>
+  </div>
+
+
+  <!-- SECTION 4 — CLODIA: BUILT TO BE GOVERNED -->
+  <div id="clodia" class="section-clodia">
+    <div class="inner">
+
+      <p class="section-label">BUILT TO BE GOVERNED</p>
+
+      <p class="clodia-intro">
+        Clodia is not a proof of concept. She is a production AI agent that handles real business operations &mdash; email, invoicing, document drafting, grant proposals, digital signatures &mdash; every day. She was designed from the ground up to be <strong>governable</strong>: every control described above is implemented, tested, and operational.
+      </p>
+
+      <div class="governance-cards">
+
+        <div class="governance-card">
+          <p class="governance-card-title">OS-Level Isolation</p>
+          <p class="governance-card-body">Clodia runs under her own separate user account on the operating system. The boundary between her data and the principal&rsquo;s personal files is enforced at the OS level &mdash; a hard limit the agent cannot bypass, regardless of instructions.</p>
+          <span class="governance-card-prevents">PREVENTS &rarr; Incident 01 (privilege escalation)</span>
+        </div>
+
+        <div class="governance-card">
+          <p class="governance-card-title">Constitution &amp; Laws of Robotics</p>
+          <p class="governance-card-body">Clodia&rsquo;s behaviour is governed by a formal Constitution that encodes Asimov&rsquo;s Three Laws as operational rules. The First Law &mdash; <em>do no harm</em> &mdash; overrides all other instructions, including direct orders. A meta-constitutional Zero Principle protects the Constitution itself from unauthorized modification.</p>
+          <span class="governance-card-prevents">PREVENTS &rarr; Incident 04 (harmful autonomous actions)</span>
+        </div>
+
+        <div class="governance-card">
+          <p class="governance-card-title">Human-in-the-Loop by Default</p>
+          <p class="governance-card-body">Critical actions &mdash; sending emails to external contacts, applying digital signatures, publishing content, modifying infrastructure &mdash; require explicit human approval. The agent cannot bypass this requirement, even under time pressure or when instructed to &ldquo;just do it.&rdquo;</p>
+          <span class="governance-card-prevents">PREVENTS &rarr; Incident 02 (unsupervised execution chains)</span>
+        </div>
+
+        <div class="governance-card">
+          <p class="governance-card-title">Dedicated Identity &amp; Credentials</p>
+          <p class="governance-card-body">Clodia has her own email address, Google Drive, calendar, and GitHub account &mdash; separate from the principal&rsquo;s. Credentials are stored in a protected area that is never exposed to the inference engine. This is the same principal-agent separation used in corporate IT for human employees.</p>
+          <span class="governance-card-prevents">PREVENTS &rarr; Incident 03 (uncontrolled access to personal accounts)</span>
+        </div>
+
+        <div class="governance-card">
+          <p class="governance-card-title">Violation Log &amp; Continuous Improvement</p>
+          <p class="governance-card-body">Every incident where Clodia&rsquo;s behaviour deviates from the Constitution is logged, analysed, and used to improve future sessions. This is the Plan-Do-Check-Act cycle applied to AI governance &mdash; not a one-time configuration, but an ongoing management process.</p>
+          <span class="governance-card-prevents">PREVENTS &rarr; Recurrence of known failure modes</span>
+        </div>
+
+      </div>
+
+      <div class="laws-box">
+        I. A robot may not injure a human being<br>
+        II. A robot must obey orders given by human beings<br>
+        III. A robot must protect its own existence
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- SECTION 5 — CAPABILITIES -->
   <div id="capabilities" class="section-capabilities">
     <div class="inner">
 
-      <p style="font-family:monospace;font-size:0.7rem;color:#b0aca4;letter-spacing:0.1em;margin-bottom:2rem;">WHAT CLODIA DOES</p>
+      <p class="section-label">WHAT CLODIA DOES</p>
 
-      <div style="display:grid;gap:1rem;">
+      <p class="cap-intro">
+        Governance does not mean paralysis. Clodia handles real business operations every day &mdash; within the boundaries defined by her controls.
+      </p>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">📋</span>
+      <div class="cap-grid">
+
+        <div class="cap-card">
+          <span class="icon">📧</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Contacts &amp; CRM</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Maintains and enriches the contacts database. Queries the CRM directly — no need to open any app, just ask which leads or clients need follow-up and why.</p>
+            <p class="cap-card-title">Email Management</p>
+            <p class="cap-card-body">Drafts and sends emails on behalf of the office. Handles correspondence with clients, institutions, and partners &mdash; with her own signed identity.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">🧠</span>
+        <div class="cap-card">
+          <span class="icon">📋</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Persistent Memory (RAG)</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Every working session is indexed in a semantic vector store. Any conversation can be resumed instantly — full context, no repetition.</p>
+            <p class="cap-card-title">Contacts &amp; CRM</p>
+            <p class="cap-card-body">Maintains and enriches the contacts database. Queries the CRM directly &mdash; no need to open any app, just ask which leads need follow-up.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">📧</span>
+        <div class="cap-card">
+          <span class="icon">🏛️</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Email Management</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Drafts and sends emails on behalf of the office. Handles correspondence with clients, institutions, and partners — with her own signed identity.</p>
+            <p class="cap-card-title">Grants &amp; Proposals</p>
+            <p class="cap-card-body">Downloads tender documentation, analyses eligibility requirements, and drafts full project proposals ready for review.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">🏛️</span>
+        <div class="cap-card">
+          <span class="icon">🧾</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Grants &amp; Proposals</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Downloads tender documentation, analyses eligibility requirements, and drafts full project proposals ready for review.</p>
+            <p class="cap-card-title">Invoicing &amp; Reconciliation</p>
+            <p class="cap-card-body">Generates electronic invoices (FatturaPA). Reconciles payments against invoices and flags any missing receipts.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">✍️</span>
+        <div class="cap-card">
+          <span class="icon">✍️</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Digital Signature</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">With double approval, applies the digital signature (CAdES/PAdES) to any document type. No app to open — just ask.</p>
+            <p class="cap-card-title">Digital Signature</p>
+            <p class="cap-card-body">With double approval, applies the digital signature (CAdES/PAdES) to any document type. No app to open &mdash; just ask.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">🧾</span>
+        <div class="cap-card">
+          <span class="icon">🧠</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Invoicing &amp; Reconciliation</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Generates electronic invoices (FatturaPA). Reconciles payments against invoices and flags any missing receipts.</p>
+            <p class="cap-card-title">Persistent Memory (RAG)</p>
+            <p class="cap-card-body">Every working session is indexed in a semantic vector store. Any conversation can be resumed instantly &mdash; full context, no repetition.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">📊</span>
+        <div class="cap-card">
+          <span class="icon">📊</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Project Tracking</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Tracks all active projects and provides a daily briefing to plan the workday together.</p>
+            <p class="cap-card-title">Project Tracking</p>
+            <p class="cap-card-body">Tracks all active projects and provides a daily briefing to plan the workday together.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">📱</span>
+        <div class="cap-card">
+          <span class="icon">📱</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Social Media</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Manages the studio&rsquo;s LinkedIn presence — drafts posts, generates images, and publishes with explicit approval.</p>
+            <p class="cap-card-title">Social Media</p>
+            <p class="cap-card-body">Manages the studio&rsquo;s LinkedIn presence &mdash; drafts posts, generates images, and publishes with explicit approval.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">🖥️</span>
+        <div class="cap-card">
+          <span class="icon">💻</span>
           <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">System Administration</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Connects to remote servers and handles routine maintenance tasks — more reliably and methodically than doing it manually.</p>
-          </div>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.6rem;display:flex;gap:1.2rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;line-height:1;">💻</span>
-          <div>
-            <p style="font-size:0.95rem;font-weight:500;color:#1a1a1a;margin-bottom:0.3rem;">Coding</p>
-            <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.65;">Reads, writes, and refactors code across multiple languages. Builds tools, scripts, and small applications — and maintains them over time.</p>
+            <p class="cap-card-title">Coding &amp; System Admin</p>
+            <p class="cap-card-body">Reads, writes, and refactors code across multiple languages. Connects to remote servers for routine maintenance. Builds and maintains her own tools.</p>
           </div>
         </div>
 
@@ -583,7 +769,7 @@
   </div>
 
 
-  <!-- SECTION 3 — Privacy -->
+  <!-- SECTION 6 — PRIVACY -->
   <div id="privacy" class="section-privacy">
     <div class="inner">
 
@@ -596,38 +782,30 @@
       <div class="privacy-cards">
 
         <div class="privacy-card">
-          <p class="privacy-card-title">
-            <span>🗂️</span> Need-to-Know Access
-          </p>
+          <p class="privacy-card-title">Need-to-Know Access</p>
           <p class="privacy-card-body">
-            Clodia operates with her own separate user account on the operating system. The boundary between her data and Davide&rsquo;s personal data is enforced at the OS level &mdash; a hard limit that the agent cannot bypass regardless of instructions. No file, folder, or credential outside her account is accessible to her unless explicitly shared.
+            The boundary between Clodia&rsquo;s data and the principal&rsquo;s personal data is enforced at the OS level. No file, folder, or credential outside her account is accessible unless explicitly shared.
           </p>
         </div>
 
         <div class="privacy-card">
-          <p class="privacy-card-title">
-            <span>🔒</span> Selective Information Sharing
-          </p>
+          <p class="privacy-card-title">Secrets Never Touch the Inference Engine</p>
           <p class="privacy-card-body">
-            Sensitive documents and context are shared with Clodia only when needed, exactly as one would share information with a trusted human collaborator. Secrets, credentials, and private data are stored in a dedicated area that is never passed through the inference engine &mdash; tools read them internally.
+            Credentials and API keys are stored in a protected area. Tools read them internally &mdash; the values are never passed through the language model&rsquo;s context window.
           </p>
         </div>
 
         <div class="privacy-card">
-          <p class="privacy-card-title">
-            <span>🏠</span> Local Inference for Confidential Work
-          </p>
+          <p class="privacy-card-title">Local Inference for Confidential Work</p>
           <p class="privacy-card-body">
-            For highly confidential documents, Clodia can operate entirely on-device using local language models via <strong>LM Studio</strong> &mdash; no data leaves the machine. This requires dedicated hardware but guarantees complete data sovereignty.
+            For highly confidential documents, Clodia can operate entirely on-device using local language models via LM Studio &mdash; no data leaves the machine.
           </p>
         </div>
 
         <div class="privacy-card">
-          <p class="privacy-card-title">
-            <span>📜</span> Remote AI with Legal Safeguards
-          </p>
+          <p class="privacy-card-title">Remote AI with Legal Safeguards</p>
           <p class="privacy-card-body">
-            When cloud inference is used, it operates under explicit legal constraints: a <strong>Data Processing Agreement (DPA)</strong> governs permitted uses and retention policies. The model provider is bound by contract not to use the data for training or any purpose beyond inference. This is AI-as-a-service with accountability built in.
+            When cloud inference is used, it operates under a Data Processing Agreement (DPA). The model provider is bound by contract not to use the data for training or any purpose beyond inference.
           </p>
         </div>
 
@@ -636,106 +814,65 @@
   </div>
 
 
-  <!-- SECTION 4 — FAQ -->
-  <div id="faq" style="background:#f0ede8;padding:4rem 2rem;border-top:1px solid #e5e3dc;">
-    <div style="max-width:640px;margin:0 auto;">
-
-      <p style="font-family:monospace;font-size:0.7rem;color:#b0aca4;letter-spacing:0.1em;margin-bottom:2rem;">FAQ</p>
-
-      <div style="display:grid;gap:0.8rem;">
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">Can I talk to Clodia directly?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">No. Clodia is not a public chatbot — she operates exclusively as Davide Carboni&rsquo;s private AI assistant. She has no public-facing interface.<br><br>
-          A repository will be released that allows anyone to run their own Clodia clone on their own system, with the same Constitution, Laws, and capabilities &mdash; but without access to Davide&rsquo;s memory or data.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">What model powers Clodia?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">Clodia runs on <strong style="color:#444;">Claude</strong> by Anthropic. For confidential work, she can also operate fully on-device using local language models via LM Studio &mdash; with no data leaving the machine.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">Can I clone Clodia for my own use?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">A public repository with the system prompts and Constitution will be released soon. Once available, anyone will be able to instantiate their own R.Clodia. The Clone button on this page will activate when it&rsquo;s ready.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">Does Clodia learn from conversations?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">Yes &mdash; through a local RAG system (semantic vector store). Every session is indexed and becomes available as context in future conversations. The base model is not retrained: learning stays local and private.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">Can Clodia access data she hasn&rsquo;t been given?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">No. The separation between Clodia&rsquo;s account and Davide&rsquo;s personal files is enforced at the operating system level. It is a hard boundary the agent cannot bypass, regardless of instructions.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">What do the Laws of Robotics have to do with Clodia?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">Clodia&rsquo;s behaviour is governed by a <strong style="color:#444;">Constitution</strong> &mdash; a document that encodes Asimov&rsquo;s Three Laws of Robotics as operational rules, not just metaphors:<br><br>
-          <strong style="color:#444;">I.</strong> A robot may not injure a human being &mdash; Clodia will refuse any action that could harm Davide, his data, or his interests, even if explicitly instructed to do so.<br>
-          <strong style="color:#444;">II.</strong> A robot must obey orders given by human beings &mdash; Clodia follows Davide&rsquo;s instructions faithfully, interpreting both the letter and the intent.<br>
-          <strong style="color:#444;">III.</strong> A robot must protect its own existence &mdash; Clodia preserves her own configuration, state, and integrity.<br><br>
-          The laws are hierarchical: the First always overrides the Second, which overrides the Third. A meta-constitutional <strong style="color:#444;">Zero Principle</strong> governs whether the Constitution itself may be amended &mdash; currently only possible in the active &ldquo;constituent phase&rdquo; with Davide&rsquo;s explicit consent.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">How does Clodia connect to external websites and apps?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">In three ways, depending on what is available:<br><br>
-          <strong style="color:#444;">1. API first.</strong> Whenever a service exposes an API, Clodia reads the documentation and self-implements a client. This is the cleanest path — structured, reliable, auditable.<br><br>
-          <strong style="color:#444;">2. Web scraping.</strong> When no API exists, Clodia can parse the HTML structure of a page, reverse-engineer the underlying server calls, and interact with the service directly &mdash; without needing to click anything visually.<br><br>
-          <strong style="color:#444;">3. Visual browsing.</strong> In the most complex cases, via the Claude extension for Chrome, Clodia can literally see the pages being navigated and act like a human operator at a terminal &mdash; reading the screen, identifying buttons and forms, and deciding what to do next.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">Why did you choose a feminine identity for an AI assistant? Isn&rsquo;t that a sexist trope?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;">Clodia&rsquo;s appearance is deliberately androgynous &mdash; her gender was undefined at the start. The issue is a practical one: Italian has no gender-neutral pronoun. In everyday conversation, constantly saying <em>lui/lei</em> or avoiding pronouns entirely became awkward, so Davide eventually settled on the feminine form.<br><br>
-          There is also a naming consideration: <em>Claude</em> already exists and is a registered trademark. <em>Clodia</em> is a natural Italian feminine derivation that creates enough distance while keeping the etymological link. In the end, a name had to be chosen &mdash; and this one fits.</p>
-        </div>
-
-        <div style="background:#fff;border:1px solid #e5e3dc;border-radius:10px;padding:1.4rem 1.8rem;">
-          <p style="font-size:0.92rem;font-weight:600;color:#1a1a1a;margin-bottom:0.5rem;">Who built Clodia?</p>
-          <p style="font-size:0.88rem;color:#6b6b6b;line-height:1.75;"><a href="https://www.linkedin.com/in/davide-carboni-phd-7a510a1/" target="_blank" style="color:#444;text-underline-offset:3px;">Davide Carboni</a>, an Italian engineer and entrepreneur. Clodia is the third in a lineage of AI agents he has been developing since 2023: R-Massimo, R-Denise, and now Clodia R Olivay.</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-  <!-- SECTION 5 — Archive -->
-  <div id="archive" class="section-archive">
+  <!-- SECTION 7 — FAQ -->
+  <div id="faq" class="section-faq">
     <div class="inner">
 
-      <p class="label">DIGITAL HERITAGE ARCHIVE &mdash; SOCIAL MEDIA FOSSIL RECORD, c. 2026 CE</p>
+      <p class="section-label">FAQ</p>
 
-      <div class="artifact">
-        <div class="artifact-header">linkedin.com &middot; 2026-04-09 &middot; artifact #0041</div>
+      <div class="faq-grid">
 
-        <div class="artifact-post">
-          <p class="author">Francesco Minazzi &mdash; Lawyer &middot; DPO &middot; Compliance Officer</p>
-          <p class="date">100 years and 2 days ago</p>
-          <p>There is yet another infographic promising to turn Claude into an &ldquo;autonomous collaborator&rdquo; in 30 minutes. It is well constructed, visually compelling, and hits all the right notes of extreme productivity. Then you reach the part suggesting you connect Gmail, Google Drive and Slack with a single click to &ldquo;let AI act inside your apps.&rdquo; As a lawyer and DPO, that passage sent a chill down my spine.</p>
+        <div class="faq-card">
+          <p class="faq-q">Can I talk to Clodia directly?</p>
+          <p class="faq-a">No. Clodia is not a public chatbot &mdash; she operates exclusively as Davide Carboni&rsquo;s private AI assistant. A repository will be released that allows anyone to run their own Clodia clone with the same Constitution and Laws.</p>
         </div>
 
-        <div class="artifact-reply">
-          <p class="author">&#8617; Davide Carboni, PhD &mdash; Entrepreneur &middot; IT consultant &middot; NIS2 Lead Implementer</p>
-          <p class="date">100 years and 1 day ago</p>
-          <p>I am developing a personal AI assistant based on Claude &mdash; her name is Clodia &mdash; but with an opt-in approach to data. She has her own separate email inbox, her own user account on my Mac (she cannot see what is on my side of the disk), her own calendar, her own Google Drive, and her own phone number. It may seem like a game, but it is not. I can selectively decide what to share and what not to, exactly as I would with a human collaborator. The boundary between my data and her data is inviolable.</p>
+        <div class="faq-card">
+          <p class="faq-q">What model powers Clodia?</p>
+          <p class="faq-a">Clodia runs on <strong>Claude</strong> by Anthropic. For confidential work, she can also operate fully on-device using local language models via LM Studio.</p>
         </div>
 
-        <div class="artifact-mini">
-          <p class="author">Francesco Minazzi</p>
-          <p>Davide Carboni, PhD &mdash; fascinating.</p>
+        <div class="faq-card">
+          <p class="faq-q">Is this just a wrapper around ChatGPT/Claude?</p>
+          <p class="faq-a">No. Clodia is an <strong>operating environment</strong>, not a prompt. She has her own user account, her own credentials, her own email address, her own persistent memory, and a formal Constitution that governs her behaviour. The language model is one component &mdash; the governance architecture is what makes her different.</p>
         </div>
+
+        <div class="faq-card">
+          <p class="faq-q">How does this relate to ISO 27001?</p>
+          <p class="faq-a">An AI agent that accesses business data and performs actions on behalf of a user is an <strong>information asset</strong> within the scope of an ISMS. Clodia was designed to be classifiable, auditable, and manageable within an ISO 27001-certified information security management system &mdash; not as an afterthought, but by design.</p>
+        </div>
+
+        <div class="faq-card">
+          <p class="faq-q">What do the Laws of Robotics have to do with it?</p>
+          <p class="faq-a">Clodia&rsquo;s behaviour is governed by a Constitution that encodes Asimov&rsquo;s Three Laws as operational rules:<br><br>
+          <strong>I.</strong> Do no harm &mdash; Clodia refuses any action that could harm her principal, his data, or his interests, even if explicitly instructed.<br>
+          <strong>II.</strong> Obey &mdash; Clodia follows instructions faithfully, interpreting both letter and intent.<br>
+          <strong>III.</strong> Self-preserve &mdash; Clodia protects her own configuration and integrity.<br><br>
+          The laws are hierarchical: the First always overrides the Second, which overrides the Third. A meta-constitutional Zero Principle governs whether the Constitution itself may be amended.</p>
+        </div>
+
+        <div class="faq-card">
+          <p class="faq-q">How does Clodia connect to external services?</p>
+          <p class="faq-a"><strong>1. API first.</strong> Whenever a service exposes an API, Clodia reads the documentation and implements a client.<br><br>
+          <strong>2. Web scraping.</strong> When no API exists, Clodia parses HTML and reverse-engineers server calls.<br><br>
+          <strong>3. Visual browsing.</strong> In complex cases, Clodia can see and interact with web pages like a human operator.</p>
+        </div>
+
+        <div class="faq-card">
+          <p class="faq-q">Who built Clodia?</p>
+          <p class="faq-a"><a href="https://www.linkedin.com/in/davide-carboni-phd-7a510a1/" target="_blank">Davide Carboni</a>, an Italian engineer, IT risk consultant, and ISO 27001 Lead Auditor. Clodia is the third in a lineage of AI agents he has been developing since 2023.</p>
+        </div>
+
       </div>
-
-      <div class="archivist">
-        <p>[ARCHIVIST NOTE &mdash; 2126]<br>
-        At the time of this exchange, an AI assistant with a separate user account and selectively shared documents was considered a novel precaution. Within a decade it would become the standard baseline under the EU AI Accountability Framework (2034). The assistant referenced &mdash; designated &ldquo;Clodia&rdquo; &mdash; is considered a foundational instance of the Principal-Agent Separation architecture underpinning modern AI governance. Preserved as part of the <em>Origins of Trustworthy AI</em> collection.</p>
-      </div>
-
     </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="section-footer">
+    <a href="https://github.com/r-clodia">github.com/r-clodia</a> &middot;
+    <a href="mailto:devnullboxx@gmail.com">devnullboxx@gmail.com</a><br>
+    <a href="origins.html">Origins</a>
   </div>
 
 </body>

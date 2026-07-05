@@ -107,6 +107,8 @@
   <span class="sp"></span>
   <a href="#agency">Concept</a>
   <a href="#features">Features</a>
+  <a href="editions.html">Editions</a>
+  <a href="integrations.html">Integrations</a>
   <a href="#open">Open source</a>
   <a href="#governance">Governance</a>
   <a href="https://github.com/r-clodia/clodia-platform" target="_blank" rel="noopener">GitHub</a>
@@ -123,10 +125,11 @@
   </div>
   <div class="facts">
     <span><b>Open-source</b></span>
-    <span>Apache-2.0</span>
+    <span>AGPL-3.0 · <b>dual licensing</b></span>
     <span><b>Self-hosted</b></span>
     <span>5 repos</span>
     <span><b>One command</b> to run</span>
+    <span><b>Tailored editions</b> via blueprint</span>
   </div>
   <div class="cast">
     <figure><img src="images/clodia.png" alt="Clodia, super-agent" /><figcaption><b>Clodia</b><span>super-agent · Claude</span></figcaption></figure>
@@ -160,17 +163,37 @@
     <div class="card"><h3>🧠 Skills</h3><span class="k">what agents can do</span><p>Composable capabilities. Equip each agent with just the skills it needs, from built-in packs or ones you import.</p></div>
     <div class="card"><h3>📐 Rules</h3><span class="k">how agents behave</span><p>Reusable rule packs that encode conventions and domain knowledge, so agents act consistently across your organization.</p></div>
     <div class="card"><h3>🗂️ Topics</h3><span class="k">shared workspaces</span><p>Rooms where agents and people collaborate on files and threads, with access control and privacy tiers. Export or import as snapshots.</p></div>
-    <div class="card"><h3>📋 Kanban</h3><span class="k">work in flow</span><p>Boards and lanes to move work across stages, with human approval gates where they matter.</p></div>
+    <div class="card"><h3>📦 Packs</h3><span class="k">domain capabilities</span><p>Ship a whole vertical as one installable pack: skills, rules, MCP connectors and agent seeds. Import from a zip or URL — agents get registered with their own identity.</p></div>
     <div class="card"><h3>🔌 Integrations</h3><span class="k">connect tools</span><p>Add tools as MCP servers — email (multi-mailbox), Trello and more — and delegate them to specific agents. Credentials live in a vault, never in code.</p></div>
     <div class="card"><h3>🧩 Providers</h3><span class="k">bring your own AI</span><p>Use Anthropic API, Claude Pro/Max, or OpenAI/Codex. Assign providers per agent to control cost and data-processing terms.</p></div>
   </div>
+</div></section>
+
+<!-- EDITIONS / MODULAR DISTRO -->
+<section id="editions"><div class="wrap">
+  <div class="label">Modular distro</div>
+  <h2>One platform. Tailored editions.</h2>
+  <p class="sub">Describe a client's edition in a single YAML blueprint — which features exist, which agents ship, which connectors are allowed, which AI providers, whose logo and even whose <i>vocabulary</i> ("topics" can become "pratiche"). Then terraform it in one command. No forks: every edition stays on the common, upgradable platform.</p>
+  <div class="code"><pre><span class="c"># blueprint.yaml — the whole edition, declared</span>
+name: studio
+profile:
+  features: { jobs: true, topics: full, rag: "off", integrations: fixed }
+  branding: { name: "Studio Commercialista", logo: ./logo.png }
+native_seeds: [clodia]          <span class="c"># ship only the agents you need</span>
+packs: [{ source: ./my-vertical }]  <span class="c"># your domain pack (can stay private)</span>
+providers: [aws-region-eu]      <span class="c"># EU data residency by default</span>
+
+<span class="c"># then:</span>
+<span class="p">$</span> clodia-build up blueprint.yaml
+<span class="p">$</span> clodia-build finalize blueprint.yaml  <span class="c"># after the admin claim</span></pre></div>
+  <p class="sub" style="margin-top:18px">Feature gating is real, not cosmetic: a disabled feature has <b>no endpoint and no attack surface</b>. <a href="editions.html" style="color:var(--accent2)">Read more about editions →</a></p>
 </div></section>
 
 <!-- OPEN & SELF-HOSTED -->
 <section id="open"><div class="wrap">
   <div class="label">Open &amp; self-hosted</div>
   <h2>Clone it, read it, run it.</h2>
-  <p class="sub">The whole platform is open source under Apache-2.0 and runs on your own machine with Docker. No third-party SaaS in the loop — the agency, its data and its credentials stay with you.</p>
+  <p class="sub">The whole platform is open source under AGPL-3.0 and runs on your own machine with Docker. Need it without AGPL terms? A commercial license is available (see LICENSING in the repo). No third-party SaaS in the loop — the agency, its data and its credentials stay with you.</p>
   <div class="code"><pre><span class="c"># build from source, run the full agency</span>
 git clone https://github.com/r-clodia/clodia-platform.git
 cd clodia-platform
@@ -196,9 +219,9 @@ docker compose up -d --build
     <span class="tag">ISO 27001 — a shared responsibility</span>
     <p style="margin:0;color:var(--muted)">A platform is not an ISMS, and it can't be "ISO 27001 certified" on its own — that's not a maturity gap we'll eventually close, it's by definition: certification belongs to an <b>organization's</b> management system, not to software. What Clodia does is provide technical controls and audit evidence, and stay <b>governable and auditable as part of</b> your ISMS. The responsibility — risk decisions, approvals, accountability — stays with you. The controls below are what Clodia implements today; several are still on the roadmap.</p>
     <div class="status">
-      <div><span class="s ok">✓</span><span>Identity (PKI per agent), least-privilege tool access, data classification, data stays self-hosted</span></div>
+      <div><span class="s ok">✓</span><span>Identity (PKI per agent), least-privilege tool access, data classification, data stays self-hosted, encrypted off-site backups (restic) with scheduled restore-tests (A.8.13), per-edition attack-surface reduction</span></div>
       <div><span class="s part">◑</span><span>Logging &amp; monitoring, supplier/cloud (LLM provider DPA), configuration management</span></div>
-      <div><span class="s todo">○</span><span>Credential encryption at rest, backups, vulnerability management, continuity — on the roadmap</span></div>
+      <div><span class="s todo">○</span><span>Credential encryption at rest, vulnerability management, continuity — on the roadmap</span></div>
     </div>
   </div>
 </div></section>
@@ -213,10 +236,10 @@ docker compose up -d --build
 
 <footer><div class="wrap">
   <span class="brand"><span class="dot">●</span> Clodia</span>
-  <span>· Open-source agentic platform · Apache-2.0</span>
+  <span>· Open-source agentic platform · AGPL-3.0 (commercial licensing available)</span>
   <span class="sp"></span>
   <a href="https://github.com/r-clodia/clodia-platform" target="_blank" rel="noopener">GitHub</a>
-  <a href="https://github.com/r-clodia/clodia-platform/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
+  <a href="https://github.com/r-clodia/clodia-platform/blob/main/LICENSING.md" target="_blank" rel="noopener">Licensing</a>
   <a href="#contact">Contact</a>
 </div></footer>
 
